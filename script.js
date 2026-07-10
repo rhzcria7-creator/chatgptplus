@@ -1,5 +1,5 @@
 /* ============================================
-   ChatGPT Plus — Script Otimizado
+   ChatGPT Plus — Script Completo
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,27 +40,107 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Countdown Timer (reseta a cada acesso) ----
+  // ---- ESTOQUE DINÂMICO ----
+  function initStock() {
+    // Pega o dia do mês para simular estoque que muda
+    const day = new Date().getDate();
+    const hour = new Date().getHours();
+    
+    // Estoque base que varia entre 8-22 unidades
+    // Simula que o estoque vai diminuindo ao longo do dia
+    let baseStock = 15 + (day % 8); // 15 a 22
+    let currentStock = Math.max(8, baseStock - Math.floor(hour * 0.5));
+    
+    // Adiciona variação aleatória para parecer mais real
+    currentStock += Math.floor(Math.random() * 4) - 2;
+    currentStock = Math.max(7, Math.min(22, currentStock));
+
+    // Atualiza todos os lugares com o número do estoque
+    const elements = ['stockNum', 'stockDisplayNum'];
+    elements.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = currentStock;
+    });
+
+    // Atualiza barra de progresso do estoque
+    const sdFill = document.getElementById('sdFill');
+    if (sdFill) {
+      const pct = (currentStock / 22) * 100;
+      sdFill.style.width = pct + '%';
+    }
+
+    // Salva no localStorage com expiração
+    const stockData = {
+      count: currentStock,
+      expires: Date.now() + (60 * 60 * 1000) // 1 hora
+    };
+    localStorage.setItem('stock_data', JSON.stringify(stockData));
+  }
+
+  // Verifica estoque salvo ou gera novo
+  function loadStock() {
+    try {
+      const saved = localStorage.getItem('stock_data');
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (data.expires > Date.now()) {
+          // Estoque ainda válido
+          const elements = ['stockNum', 'stockDisplayNum'];
+          elements.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = data.count;
+          });
+          const sdFill = document.getElementById('sdFill');
+          if (sdFill) sdFill.style.width = (data.count / 22 * 100) + '%';
+          return;
+        }
+      }
+    } catch (e) {}
+    initStock();
+  }
+  loadStock();
+
+  // Diminui estoque quando alguém clica em comprar
+  document.querySelectorAll('a[href*="infinitypay"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      try {
+        const saved = localStorage.getItem('stock_data');
+        if (saved) {
+          const data = JSON.parse(saved);
+          if (data.count > 7) {
+            data.count -= 1;
+            localStorage.setItem('stock_data', JSON.stringify(data));
+            const elements = ['stockNum', 'stockDisplayNum'];
+            elements.forEach(id => {
+              const el = document.getElementById(id);
+              if (el) el.textContent = data.count;
+            });
+            const sdFill = document.getElementById('sdFill');
+            if (sdFill) sdFill.style.width = (data.count / 22 * 100) + '%';
+          }
+        }
+      } catch (e) {}
+    });
+  });
+
+  // ---- COUNTDOWN TIMER (reinicia a cada visita) ----
   function initCountdown() {
     const elems = [
       { h: 'cd-hours', m: 'cd-minutes', s: 'cd-seconds' },
       { h: 'fcd-hours', m: 'fcd-minutes', s: 'fcd-seconds' }
     ];
 
-    // Sempre reinicia: 45 minutos a partir de AGORA
-    const resetTime = Date.now() + (45 * 60 * 1000);
-    localStorage.setItem('countdown_end', resetTime.toString());
-
-    let endTime = resetTime;
+    // Sempre reinicia: 45 minutos a partir de agora
+    const endTime = Date.now() + (45 * 60 * 1000);
+    localStorage.setItem('countdown_end', endTime.toString());
 
     function update() {
       const now = Date.now();
-      const diff = endTime - now;
+      const diff = Math.max(0, endTime - now);
 
       if (diff <= 0) {
-        // Reinicia automaticamente
-        endTime = Date.now() + (45 * 60 * 1000);
-        localStorage.setItem('countdown_end', endTime.toString());
+        initCountdown();
+        return;
       }
 
       const h = Math.floor(diff / 3600000);
@@ -82,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initCountdown();
 
-  // ---- Floating CTA ----
+  // ---- FLOATING CTA ----
   const floatingCta = document.getElementById('floatingCta');
   if (floatingCta) {
     const planSection = document.getElementById('plano');
@@ -97,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---- Scroll Reveal ----
+  // ---- SCROLL REVEAL ----
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length) {
     const observer = new IntersectionObserver(entries => {
@@ -112,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
   }
 
-  // ---- FAQ Accordion ----
+  // ---- FAQ ACCORDION ----
   document.querySelectorAll('.faq-item').forEach(item => {
     const btn = item.querySelector('.faq-q');
     if (btn) {
@@ -124,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---- Smooth scroll ----
+  // ---- SMOOTH SCROLL ----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
@@ -138,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Button ripple effect ----
+  // ---- RIPPLE EFFECT NO BOTÃO ----
   document.querySelectorAll('.btn-buy, .btn-buy-full, .btn-buy-final').forEach(btn => {
     btn.addEventListener('click', e => {
       const rect = btn.getBoundingClientRect();
@@ -154,13 +234,43 @@ document.addEventListener('DOMContentLoaded', () => {
         animation: ripple 0.6s ease-out;
         pointer-events: none;
       `;
+      btn.style.position = 'relative';
       btn.appendChild(ripple);
       setTimeout(() => ripple.remove(), 600);
     });
   });
 
-  // Add ripple keyframes
-  const style = document.createElement('style');
-  style.textContent = `@keyframes ripple { to { transform: scale(20); opacity: 0; } }`;
-  document.head.appendChild(style);
+  // Adiciona keyframes do ripple
+  if (!document.querySelector('#ripple-style')) {
+    const style = document.createElement('style');
+    style.id = 'ripple-style';
+    style.textContent = '@keyframes ripple { to { transform: scale(20); opacity: 0; } }';
+    document.head.appendChild(style);
+  }
+
+  // ---- SOCIAL PROOF — nomes aleatórios ----
+  const names = ['João', 'Maria', 'Carlos', 'Ana', 'Pedro', 'Juliana', 'Marcos', 'Fernanda', 'Bruno', 'Rafaela', 'Diego', 'Camila', 'Thiago', 'Beatriz', 'Lucas', 'Felipe', 'Carla', 'Renata', 'Gabriel', 'Bianca'];
+  const cities = ['SP', 'RJ', 'BH', 'Curitiba', 'Salvador', 'Recife', 'Fortaleza', 'Porto Alegre', 'Goiânia'];
+  const citiesFull = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba', 'Salvador', 'Recife', 'Fortaleza', 'Porto Alegre', 'Goiânia'];
+  const actions = [
+    (n, c) => `🔥 ${n} comprou agora`,
+    (n, c) => `⭐ ${n} de ${c} avaliou ★★★★★`,
+    (n, c) => `⚡ ${n} recebeu em ${Math.floor(Math.random() * 8) + 2} min`
+  ];
+
+  function updateTicker() {
+    const track = document.getElementById('proofTrack');
+    if (!track) return;
+
+    const items = [];
+    for (let i = 0; i < 10; i++) {
+      const n = names[Math.floor(Math.random() * names.length)];
+      const c = citiesFull[Math.floor(Math.random() * citiesFull.length)];
+      const a = actions[Math.floor(Math.random() * actions.length)];
+      items.push(a(n, c));
+    }
+    track.innerHTML = items.map(t => `<span>${t}</span>`).join('');
+  }
+  updateTicker();
+  setInterval(updateTicker, 8000);
 });

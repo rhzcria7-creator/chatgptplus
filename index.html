@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT Plus — Acesso Premium 30 dias por R$ 24,90</title>
-  <meta name="description" content="ChatGPT Plus Individual por 30 dias. GPT-4o, DALL-E 3, Pesquisa Avançada xThink Skills e muito mais. Entrega em 10 min.">
+  <meta name="description" content="ChatGPT Plus Individual por 30 dias. GPT-4o, DALL-E 3, xThink Skills, Pesquisa Web e muito mais. Entrega em 10 min.">
   <meta name="keywords" content="ChatGPT Plus, GPT-4o, xThink, DALL-E 3, IA, conta premium">
   <meta name="robots" content="index, follow">
 
@@ -75,7 +75,7 @@
       </div>
       <div class="stock-indicator">
         <span class="stock-pulse"></span>
-        <span>🔥 Últimas vagas</span>
+        <span id="urgencyStock">🔥 Últimas <strong id="stockNum">12</strong> vagas</span>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@
       </div>
 
       <div class="hero-actions reveal">
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy" id="buyBtn">
+        <a href="https://infinitypay.com.br/checkout/chatgpt-plus-001?redirect=https://chatgptplus-navy.vercel.app/sucesso.html" target="_blank" rel="noopener" class="btn-buy" id="buyBtn">
           <span class="btn-buy-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </span>
@@ -157,22 +157,28 @@
 
   <!-- Social Proof Ticker -->
   <div class="proof-ticker">
-    <div class="proof-track">
+    <div class="proof-track" id="proofTrack">
       <span>🔥 João comprou agora</span>
       <span>⭐ Maria avaliou ★★★★★</span>
-      <span>⚡ Carlos recebeu em 3 minutos</span>
+      <span>⚡ Carlos recebeu em 3 min</span>
       <span>🔥 Ana comprou agora</span>
       <span>⭐ Pedro avaliou ★★★★★</span>
-      <span>⚡ Juliana recebeu em 5 minutos</span>
+      <span>⚡ Juliana recebeu em 5 min</span>
       <span>🔥 Marcos comprou agora</span>
       <span>⭐ Fernanda avaliou ★★★★★</span>
-      <span>⚡ Bruno recebeu em 4 minutos</span>
+      <span>⚡ Bruno recebeu em 4 min</span>
       <span>🔥 Rafaela comprou agora</span>
       <span>⭐ Diego avaliou ★★★★★</span>
-      <span>⚡ Camila recebeu em 2 minutos</span>
+      <span>⚡ Camila recebeu em 2 min</span>
       <span>🔥 Thiago comprou agora</span>
       <span>⭐ Beatriz avaliou ★★★★★</span>
-      <span>⚡ Lucas recebeu em 6 minutos</span>
+      <span>⚡ Lucas recebeu em 6 min</span>
+      <span>🔥 Felipe comprou agora</span>
+      <span>⭐ Carla avaliou ★★★★★</span>
+      <span>⚡ Renata recebeu em 4 min</span>
+      <span>🔥 Gabriel comprou agora</span>
+      <span>⭐ Bianca avaliou ★★★★★</span>
+      <span>⚡ Ricardo recebeu em 3 min</span>
     </div>
   </div>
 
@@ -331,6 +337,17 @@
       <h2 class="section-title reveal">Seu plano — simples e direto</h2>
       <p class="section-subtitle reveal">Um preço. Tudo incluso. Sem enrolação.</p>
 
+      <!-- Estoque visual -->
+      <div class="stock-display reveal" id="stockDisplay">
+        <div class="sd-bar">
+          <div class="sd-bar-fill" id="sdFill" style="width: 70%"></div>
+        </div>
+        <div class="sd-info">
+          <span class="sd-fire">🔥</span>
+          <span class="sd-text">Estoque limitado: <strong id="stockDisplayNum">17</strong> unidades disponíveis</span>
+        </div>
+      </div>
+
       <div class="plan-card reveal">
         <div class="plan-floating">
           <span class="pf-tag">🔥 ÚLTIMA UNIDADE</span>
@@ -393,7 +410,7 @@
           </div>
         </div>
 
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy-full" id="planBuyBtn">
+        <a href="https://infinitypay.com.br/checkout/chatgpt-plus-001?redirect=https://chatgptplus-navy.vercel.app/sucesso.html" target="_blank" rel="noopener" class="btn-buy-full" id="planBuyBtn">
           <span class="btnbf-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </span>
@@ -421,7 +438,6 @@
         <div class="step-card reveal">
           <div class="step-icon-wrap">
             <span class="step-num-big">1</span>
-            <div class="step-connector"></div>
           </div>
           <div class="step-body">
             <h3>Pague com segurança</h3>
@@ -432,7 +448,6 @@
         <div class="step-card reveal">
           <div class="step-icon-wrap">
             <span class="step-num-big">2</span>
-            <div class="step-connector"></div>
           </div>
           <div class="step-body">
             <h3>Receba automaticamente</h3>
@@ -601,7 +616,7 @@
           </div>
         </div>
 
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy-final">
+        <a href="https://infinitypay.com.br/checkout/chatgpt-plus-001?redirect=https://chatgptplus-navy.vercel.app/sucesso.html" target="_blank" rel="noopener" class="btn-buy-final">
           <span class="btnbf-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </span>
@@ -623,7 +638,7 @@
 
   <!-- Floating CTA -->
   <div class="floating-cta" id="floatingCta">
-    <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="fcta-btn">
+    <a href="https://infinitypay.com.br/checkout/chatgpt-plus-001?redirect=https://chatgptplus-navy.vercel.app/sucesso.html" target="_blank" rel="noopener" class="fcta-btn">
       <span class="fcta-btn-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       </span>
