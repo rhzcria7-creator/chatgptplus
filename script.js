@@ -253,9 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const cities = ['SP', 'RJ', 'BH', 'Curitiba', 'Salvador', 'Recife', 'Fortaleza', 'Porto Alegre', 'Goiânia'];
   const citiesFull = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba', 'Salvador', 'Recife', 'Fortaleza', 'Porto Alegre', 'Goiânia'];
   const actions = [
-    (n, c) => `🔥 ${n} comprou agora`,
+    (n, c) => `🔓 ${n} acabou de comprar`,
     (n, c) => `⭐ ${n} de ${c} avaliou ★★★★★`,
-    (n, c) => `⚡ ${n} recebeu em ${Math.floor(Math.random() * 8) + 2} min`
+    (n, c) => `⚡ ${n} recebeu em ${Math.floor(Math.random() * 8) + 2} min`,
+    (n, c) => `🚀 ${n} ativou o Plus`
   ];
 
   function updateTicker() {
