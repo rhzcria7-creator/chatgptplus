@@ -4,18 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento Confirmado — ChatGPT Plus</title>
-  <meta name="description" content="Seu pagamento foi confirmado. Siga os passos para acessar sua conta ChatGPT Plus.">
   <meta name="robots" content="noindex, nofollow">
 
-  <!-- Favicon inline -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2322c55e'/><text x='50' y='70' font-size='60' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>✓</text></svg>" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310b981'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>✓</text></svg>" type="image/svg+xml">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,61 +19,211 @@
   <div class="success-page">
     <div class="success-card">
 
-      <!-- Check Icon -->
-      <div class="success-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
+      <div class="success-icon-wrap">
+        <div class="success-icon-ring"></div>
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
       </div>
 
-      <h1>Pagamento confirmado</h1>
-      <p class="success-subtitle">Seu pedido foi processado com sucesso. Siga os passos abaixo para acessar sua conta.</p>
+      <div class="success-badge">✅ Pagamento confirmado</div>
 
-      <!-- Steps -->
+      <h1 class="success-title">Sua conta está a caminho!</h1>
+      <p class="success-sub">Siga os passos abaixo para acessar seu ChatGPT Plus em até <strong>10 minutos</strong>.</p>
+
       <div class="success-steps">
         <div class="success-step">
-          <div class="success-step-num">1</div>
-          <div class="success-step-content">
+          <div class="ss-num">1</div>
+          <div class="ss-body">
             <h3>Aguarde a entrega</h3>
-            <p>Os dados de acesso (e-mail e senha) serão enviados para o e-mail associado ao seu pagamento em até <strong>10 minutos</strong>. Fique de olho na sua caixa de entrada.</p>
+            <p>Os dados de acesso serão enviados para seu e-mail em até <strong>10 minutos</strong>. Fique de olho na caixa de entrada, spam e promoções.</p>
           </div>
         </div>
-
         <div class="success-step">
-          <div class="success-step-num">2</div>
-          <div class="success-step-content">
+          <div class="ss-num">2</div>
+          <div class="ss-body">
             <h3>Acesse o ChatGPT</h3>
-            <p>Com os dados recebidos, acesse <strong>chat.openai.com</strong> e faça login com o e-mail e senha fornecidos. Você já terá acesso ao plano Plus.</p>
+            <p>Acesse <strong>chat.openai.com</strong> e faça login com os dados recebidos. Seu acesso Plus estará ativo automaticamente.</p>
           </div>
         </div>
-
         <div class="success-step">
-          <div class="success-step-num">3</div>
-          <div class="success-step-content">
-            <h3>Altere a senha</h3>
-            <p>Por segurança, altere imediatamente a senha e o e-mail da conta para os seus dados pessoais. Vá em <strong>Configurações → Segurança</strong> para fazer a alteração.</p>
+          <div class="ss-num">3</div>
+          <div class="ss-body">
+            <h3>Altere sua senha</h3>
+            <p>Vá em <strong>Configurações → Segurança</strong> e altere imediatamente e-mail e senha para seus dados pessoais.</p>
           </div>
         </div>
       </div>
 
-      <!-- Alert -->
       <div class="success-alert">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <p><strong>Não recebeu o e-mail?</strong> Verifique sua caixa de entrada, pasta de spam, lixeira e também a aba "Promoções" caso use Gmail. O envio é automático e pode levar até 10 minutos.</p>
+        <span class="sa-icon">⚠️</span>
+        <div class="sa-body">
+          <strong>Não recebeu o e-mail?</strong><br>
+          Verifique: caixa de entrada, spam, lixeira e aba "Promoções" (Gmail). Se nada chegar em 15 min, entre em contato.
+        </div>
       </div>
 
-      <!-- Back Button -->
-      <a href="index.html" class="btn-back">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <div class="success-info">
+        <div class="si-item">
+          <span>⏱️</span> Entrega: até 10 minutos
+        </div>
+        <div class="si-item">
+          <span>🔒</span> Conta 100% sua
+        </div>
+        <div class="si-item">
+          <span>🛡️</span> Garantia de entrega
+        </div>
+      </div>
+
+      <a href="index.html" class="success-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Voltar ao site
       </a>
 
     </div>
   </div>
+
+  <style>
+    .success-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: var(--bg);
+    }
+    .success-card {
+      max-width: 560px;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .success-icon-wrap {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 24px;
+    }
+    .success-icon-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid var(--success);
+      opacity: 0.3;
+      animation: pulse-ring 2s infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.08); opacity: 0.1; }
+    }
+    .success-icon {
+      width: 96px;
+      height: 96px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 2px solid var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-icon svg { width: 44px; height: 44px; color: var(--success); }
+    .success-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--success);
+      padding: 5px 16px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .success-title { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .success-sub { font-size: 1rem; color: var(--text-soft); margin-bottom: 32px; }
+    .success-sub strong { color: var(--primary-light); }
+    .success-steps { text-align: left; margin-bottom: 24px; }
+    .success-step {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .success-step:last-child { border-bottom: none; }
+    .ss-num {
+      width: 36px;
+      height: 36px;
+      background: var(--primary-glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .ss-body h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .ss-body p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.5; }
+    .success-alert {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+    .sa-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .sa-body { font-size: 0.88rem; color: var(--text-soft); line-height: 1.6; }
+    .success-info {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .si-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+    .success-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-hover);
+      color: var(--text);
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: background 0.25s ease, transform 0.25s ease;
+      text-decoration: none;
+    }
+    .success-back:hover { background: var(--surface); transform: translateY(-1px); }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .success-card { padding: 32px 20px; }
+      .success-title { font-size: 1.4rem; }
+      .success-info { flex-direction: column; gap: 8px; }
+    }
+  </style>
 
 </body>
 </html>

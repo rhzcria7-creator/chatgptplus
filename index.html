@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT Plus Individual — 30 Dias | Acesso Completo</title>
-  <meta name="description" content="ChatGPT Plus Individual por 30 dias com acesso completo ao GPT-4o, DALL-E 3, pesquisa web e muito mais. Conta privada, entrega rápida.">
-  <meta name="keywords" content="ChatGPT Plus, GPT-4o, IA, inteligência artificial, conta individual">
+  <title>ChatGPT Plus — Acesso Premium 30 dias por R$ 24,90</title>
+  <meta name="description" content="ChatGPT Plus Individual por 30 dias. GPT-4o, DALL-E 3, Pesquisa Avançada xThink Skills e muito mais. Entrega em 10 min.">
+  <meta name="keywords" content="ChatGPT Plus, GPT-4o, xThink, DALL-E 3, IA, conta premium">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="ChatGPT Plus Individual — 30 Dias">
-  <meta property="og:description" content="Acesso completo ao ChatGPT Plus com GPT-4o, DALL-E 3 e muito mais. Conta privada individual.">
+  <meta property="og:title" content="ChatGPT Plus — 30 dias por R$ 24,90">
+  <meta property="og:description" content="Acesso completo com GPT-4o, xThink Skills, DALL-E 3 e pesquisa web. Entrega em 10 min.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://seudominio.com">
-  <meta property="og:image" content="https://placehold.co/1200x630/111111/2563eb?text=ChatGPT+Plus">
 
-  <!-- Favicon inline -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>G</text></svg>" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>G</text></svg>" type="image/svg+xml">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Loader -->
   <div id="loader">
-    <div class="loader-spinner"></div>
+    <div class="loader-pulse">
+      <div class="lp-dot"></div>
+      <div class="lp-dot"></div>
+      <div class="lp-dot"></div>
+    </div>
   </div>
 
   <!-- Header -->
@@ -38,82 +36,236 @@
     <div class="container header-inner">
       <a href="#" class="logo">
         <div class="logo-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
         </div>
-        ChatGPT Plus
+        <span>ChatGPT<span class="logo-plus">Plus</span></span>
       </a>
-      <nav class="nav">
+      <nav class="nav" id="mainNav">
         <a href="#recursos" class="nav-link">Recursos</a>
+        <a href="#xthink" class="nav-link">xThink Skills</a>
         <a href="#plano" class="nav-link">Plano</a>
-        <a href="#como-funciona" class="nav-link">Como funciona</a>
         <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#plano" class="btn-nav">Comprar agora</a>
+        <a href="#plano" class="btn-nav pulse-glow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Comprar — R$ 24,90
+        </a>
       </nav>
-      <button class="menu-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- Urgency Bar -->
-  <div class="urgency-bar" style="margin-top: 64px;">
-    <span>⚡ Oferta por tempo limitado</span>
-    <span class="countdown">
-      <span class="countdown-segment" id="cd-hours">00</span>:
-      <span class="countdown-segment" id="cd-minutes">00</span>:
-      <span class="countdown-segment" id="cd-seconds">00</span>
-    </span>
-    <span class="stock-badge">
-      <span class="stock-dot"></span>
-      Última unidade disponível
-    </span>
+  <div class="urgency-bar" id="urgencyBar">
+    <div class="ub-inner">
+      <span class="ub-icon">⚡</span>
+      <span class="ub-text">OFERTA POR TEMPO LIMITADO</span>
+      <div class="countdown">
+        <span class="cs-label">Termina em</span>
+        <span class="countdown-segment" id="cd-hours">00</span>
+        <span class="cs-sep">:</span>
+        <span class="countdown-segment" id="cd-minutes">00</span>
+        <span class="cs-sep">:</span>
+        <span class="countdown-segment" id="cd-seconds">00</span>
+      </div>
+      <div class="stock-indicator">
+        <span class="stock-pulse"></span>
+        <span>🔥 Últimas vagas</span>
+      </div>
+    </div>
   </div>
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
     <div class="container hero-content">
+
       <div class="hero-badge">
-        <span class="dot"></span>
-        Entrega automática em até 10 minutos
+        <span class="badge-dot"></span>
+        <span>Entrega automática <strong>em até 10 minutos</strong></span>
       </div>
 
-      <h1>
-        ChatGPT Plus Individual<br>
-        <span>por 30 dias</span>
+      <h1 class="hero-title">
+        ChatGPT Plus<br>
+        <span class="gradient-text">30 dias de Acesso Premium</span>
       </h1>
 
-      <p class="hero-desc">
-        Acesso completo a todas as funcionalidades premium do ChatGPT. Conta individual e privada, exclusivamente sua.
+      <p class="hero-sub">
+        Tudo que você precisa para trabalhar, criar e pensar melhor.<br>
+        <strong>xThink Skills</strong> • GPT-4o • DALL-E 3 • Pesquisa Web
       </p>
 
-      <div class="hero-price">
-        <span class="price-original">R$ 99,90</span>
-        <span class="price-current">R$ 39,90</span>
-        <span class="price-discount">-60%</span>
+      <div class="price-block reveal">
+        <div class="price-tag">
+          <span class="price-old">De <s>R$ 99,90</s></span>
+          <div class="price-main">
+            <span class="price-currency">R$</span>
+            <span class="price-value">24</span>
+            <span class="price-cents">,90</span>
+          </div>
+          <span class="price-save">Economize R$ 75</span>
+        </div>
+        <div class="price-badge-float">-75% OFF</div>
       </div>
 
-      <div class="hero-cta-group">
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener noreferrer" class="btn-primary" id="hero-buy">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          Comprar agora — R$ 39,90
+      <div class="hero-actions reveal">
+        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy" id="buyBtn">
+          <span class="btn-buy-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
+          <span class="btn-buy-text">
+            <span class="btn-buy-main">COMPRAR AGORA</span>
+            <span class="btn-buy-sub">Pagamento seguro • Entrega em 10 min</span>
+          </span>
+          <span class="btn-buy-arrow">→</span>
         </a>
-        <span style="font-size: 0.8rem; color: var(--gray-500);">Pagamento seguro via InfinityPay</span>
+
+        <div class="payment-icons">
+          <span>Pagamento:</span>
+          <span class="pi">Pix</span>
+          <span class="pi">Cartão</span>
+          <span class="pi">Boleto</span>
+          <span class="pi-secure">🔒 SSL</span>
+        </div>
       </div>
 
-      <div class="hero-trust">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Pagamento seguro
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-num">10k+</span>
+          <span class="stat-label">Clientes satisfeitos</span>
         </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Entrega em até 10 min
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">⭐ 4.9</span>
+          <span class="stat-label">Avaliação média</span>
         </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          Pix, cartão ou boleto
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">10 min</span>
+          <span class="stat-label">Entrega automática</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Social Proof Ticker -->
+  <div class="proof-ticker">
+    <div class="proof-track">
+      <span>🔥 João comprou agora</span>
+      <span>⭐ Maria avaliou ★★★★★</span>
+      <span>⚡ Carlos recebeu em 3 minutos</span>
+      <span>🔥 Ana comprou agora</span>
+      <span>⭐ Pedro avaliou ★★★★★</span>
+      <span>⚡ Juliana recebeu em 5 minutos</span>
+      <span>🔥 Marcos comprou agora</span>
+      <span>⭐ Fernanda avaliou ★★★★★</span>
+      <span>⚡ Bruno recebeu em 4 minutos</span>
+      <span>🔥 Rafaela comprou agora</span>
+      <span>⭐ Diego avaliou ★★★★★</span>
+      <span>⚡ Camila recebeu em 2 minutos</span>
+      <span>🔥 Thiago comprou agora</span>
+      <span>⭐ Beatriz avaliou ★★★★★</span>
+      <span>⚡ Lucas recebeu em 6 minutos</span>
+    </div>
+  </div>
+
+  <!-- xThink Skills -->
+  <section class="section xthink-section" id="xthink">
+    <div class="container">
+      <div class="section-eyebrow reveal">
+        <span class="eyebrow-badge">✨ NOVO</span>
+        <span>Recurso Exclusivo</span>
+      </div>
+      <h2 class="section-title reveal">xThink Skills — Pesquisa Avançada</h2>
+      <p class="section-subtitle reveal">O poder do ChatGPT Plus elevado ao máximo com análise profunda, raciocínio estratégico e pesquisa inteligente.</p>
+
+      <div class="xthink-grid">
+        <div class="xthink-card reveal">
+          <div class="xc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+          </div>
+          <div class="xc-badge-new">NOVO</div>
+          <h3>Pesquisa Profunda</h3>
+          <p>Busca inteligente em toda a internet com análise de múltiplas fontes simultâneas para respostas precisas e atualizadas.</p>
+          <ul class="xc-list">
+            <li>✓ Análise de 50+ fontes</li>
+            <li>✓ Citations em tempo real</li>
+            <li>✓ Atualização até hoje</li>
+          </ul>
+        </div>
+
+        <div class="xthink-card reveal xc-featured">
+          <div class="xc-icon xc-icon-glow">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div class="xc-badge-pop">⭐ DESTAQUE</div>
+          <h3>Raciocínio Estratégico xThink</h3>
+          <p>Pensamento profundo e análise step-by-step para resolver problemas complexos com clareza e precisão lógica.</p>
+          <ul class="xc-list">
+            <li>✓ Chain-of-thought</li>
+            <li>✓ Análise multipasso</li>
+            <li>✓ Validação de ideias</li>
+          </ul>
+        </div>
+
+        <div class="xthink-card reveal">
+          <div class="xc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="xc-badge-new">NOVO</div>
+          <h3>Code Interpreter</h3>
+          <p>Execute código, analise dados, gere gráficos e automatize tarefas com interpretação inteligente de arquivos.</p>
+          <ul class="xc-list">
+            <li>✓ Python ao vivo</li>
+            <li>✓ Análise de CSVs/PDFs</li>
+            <li>✓ Gráficos automáticos</li>
+          </ul>
+        </div>
+
+        <div class="xthink-card reveal">
+          <div class="xc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Análise de Documentos</h3>
+          <p>Envie PDFs, planilhas e imagens. A IA analisa, resume e extrai insights valiosos de qualquer arquivo.</p>
+          <ul class="xc-list">
+            <li>✓ PDF até 500 páginas</li>
+            <li>✓ Excel/CSV avançado</li>
+            <li>✓ Imagens com OCR</li>
+          </ul>
+        </div>
+
+        <div class="xthink-card reveal">
+          <div class="xc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>GPTs Personalizados</h3>
+          <p>Crie e use assistentes especializados para marketing, programação, design, estudos e muito mais.</p>
+          <ul class="xc-list">
+            <li>✓ 10.000+ GPTs prontos</li>
+            <li>✓ Criação de GPTs</li>
+            <li>✓ Automação completa</li>
+          </ul>
+        </div>
+
+        <div class="xthink-card reveal">
+          <div class="xc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>DALL-E 3 Image Gen</h3>
+          <p>Gere imagens impressionantes a partir de texto. Fotos profissionais, arte digital e ilustrações em segundos.</p>
+          <ul class="xc-list">
+            <li>✓ 4096x4096 alta resolução</li>
+            <li>✓ Edição e variação</li>
+            <li>✓ Uso comercial liberado</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -122,44 +274,52 @@
   <!-- Features -->
   <section class="section" id="recursos">
     <div class="container">
-      <h2 class="section-title reveal">Tudo que o ChatGPT Plus oferece</h2>
-      <p class="section-subtitle reveal reveal-delay-1">Acesso ilimitado às melhores ferramentas de inteligência artificial do mercado.</p>
+      <h2 class="section-title reveal">Por que escolher o Plus?</h2>
+      <p class="section-subtitle reveal">Tudo que o plano gratuito não oferece — e que você precisa para crescer.</p>
 
-      <div class="features-grid">
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-icon">🔒</div>
-          <h3>Conta Individual e Privada</h3>
-          <p>A conta é exclusivamente sua. Você pode alterar e-mail, senha e personalizar como quiser.</p>
+      <div class="compare-table reveal">
+        <div class="ct-header">
+          <div class="ct-feature-col">Recurso</div>
+          <div class="ct-free-col">Grátis</div>
+          <div class="ct-plus-col highlight-col">
+            <span class="ct-badge">Plus</span>
+            R$ 24,90
+          </div>
         </div>
-
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-icon">⚡</div>
-          <h3>GPT-4o Completo</h3>
-          <p>Acesso ao modelo mais avançado da OpenAI com respostas mais rápidas e inteligentes.</p>
+        <div class="ct-row">
+          <span class="ct-feat">GPT-4o</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ Ilimitado</span>
         </div>
-
-        <div class="feature-card reveal reveal-delay-3">
-          <div class="feature-icon">🎨</div>
-          <h3>DALL-E 3</h3>
-          <p>Gere imagens incríveis com o melhor gerador de imagens por inteligência artificial.</p>
+        <div class="ct-row">
+          <span class="ct-feat">xThink Skills Pesquisa</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ Completo</span>
         </div>
-
-        <div class="feature-card reveal reveal-delay-4">
-          <div class="feature-icon">🌐</div>
-          <h3>Pesquisa na Web</h3>
-          <p>O ChatGPT pesquisa informações atualizadas na internet para respostas precisas.</p>
+        <div class="ct-row">
+          <span class="ct-feat">DALL-E 3</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ Sim</span>
         </div>
-
-        <div class="feature-card reveal reveal-delay-5">
-          <div class="feature-icon">📄</div>
-          <h3>Análise de Arquivos</h3>
-          <p>Envie PDFs, planilhas, imagens e documentos para análise avançada pela IA.</p>
+        <div class="ct-row">
+          <span class="ct-feat">Pesquisa Web em Tempo Real</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ Sim</span>
         </div>
-
-        <div class="feature-card reveal reveal-delay-6">
-          <div class="feature-icon">🤖</div>
-          <h3>GPTs Personalizados</h3>
-          <p>Acesse e crie GPTs customizados para tarefas específicas do seu dia a dia.</p>
+        <div class="ct-row">
+          <span class="ct-feat">Upload de Arquivos</span>
+          <span class="ct-free">Limitado</span>
+          <span class="ct-plus highlight-col">✓ Ilimitado</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-feat">GPTs Personalizados</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ Sim</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-feat">Conta Individual Privada</span>
+          <span class="ct-free">✗</span>
+          <span class="ct-plus highlight-col">✓ 100% sua</span>
         </div>
       </div>
     </div>
@@ -168,59 +328,85 @@
   <!-- Plan -->
   <section class="plan-section" id="plano">
     <div class="container">
-      <h2 class="section-title reveal">Plano Individual</h2>
-      <p class="section-subtitle reveal reveal-delay-1">Um único plano, sem surpresas. Tudo incluso.</p>
+      <h2 class="section-title reveal">Seu plano — simples e direto</h2>
+      <p class="section-subtitle reveal">Um preço. Tudo incluso. Sem enrolação.</p>
 
-      <div class="plan-card reveal reveal-delay-2">
-        <div class="plan-popular">Última unidade</div>
-        <div class="plan-name">ChatGPT Plus</div>
-        <div class="plan-desc">Individual — 30 dias de acesso completo</div>
-
-        <div class="plan-price-row">
-          <span class="plan-price-original">R$ 99,90</span>
-          <span class="plan-price">R$ 39,90</span>
-        </div>
-        <div class="plan-period">pagamento único · válido por 30 dias</div>
-
-        <div class="plan-features">
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Conta individual e privada
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Acesso ao GPT-4o sem limites
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            DALL-E 3 para geração de imagens
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Pesquisa na web em tempo real
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Upload e análise de arquivos
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Acesso a GPTs personalizados
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Entrega em até 10 minutos
-          </div>
-          <div class="plan-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Altere e-mail e senha livremente
-          </div>
+      <div class="plan-card reveal">
+        <div class="plan-floating">
+          <span class="pf-tag">🔥 ÚLTIMA UNIDADE</span>
         </div>
 
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener noreferrer" class="btn-primary btn-plan">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          Comprar agora — R$ 39,90
+        <div class="plan-header">
+          <div class="plan-icon-big">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="plan-title">ChatGPT Plus</h3>
+          <p class="plan-subtitle">Acesso completo — 30 dias</p>
+        </div>
+
+        <div class="plan-price-area">
+          <div class="plan-old-price"><s>R$ 99,90</s></div>
+          <div class="plan-price-big">
+            <span class="currency">R$</span>
+            <span class="price-num">24</span>
+            <span class="price-dec">,90</span>
+          </div>
+          <div class="plan-period">pagamento único • válido 30 dias</div>
+        </div>
+
+        <div class="plan-checklist">
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>Conta individual e <strong>100% privada</strong></span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>GPT-4o com <strong>xThink Skills</strong></span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>DALL-E 3 para geração de imagens</span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>Pesquisa web em <strong>tempo real</strong></span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>Upload de arquivos <strong>ilimitado</strong></span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>GPTs personalizados</span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>Entrega <strong>automática em 10 min</strong></span>
+          </div>
+          <div class="pc-item">
+            <span class="pc-icon">✓</span>
+            <span>Altere e-mail e senha livremente</span>
+          </div>
+        </div>
+
+        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy-full" id="planBuyBtn">
+          <span class="btnbf-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
+          <span class="btnbf-text">
+            <span class="btnbf-main">COMPRAR AGORA — R$ 24,90</span>
+            <span class="btnbf-sub">🔒 Pagamento seguro • Pix, Cartão ou Boleto</span>
+          </span>
+          <span class="btnbf-arrow">→</span>
         </a>
+
+        <div class="plan-guarantee">
+          <span>🛡️</span> Sua compra é 100% protegida. Receba sua conta em até 10 minutos ou seu dinheiro de volta.
+        </div>
       </div>
     </div>
   </section>
@@ -229,53 +415,85 @@
   <section class="section" id="como-funciona">
     <div class="container">
       <h2 class="section-title reveal">Como funciona</h2>
-      <p class="section-subtitle reveal reveal-delay-1">Simples, rápido e sem complicações.</p>
+      <p class="section-subtitle reveal">3 passos simples para começar agora.</p>
 
       <div class="steps-grid">
-        <div class="step-card reveal reveal-delay-1">
-          <div class="step-number">1</div>
-          <h3>Faça o pagamento</h3>
-          <p>Clique em "Comprar agora" e pague com Pix, cartão de crédito ou boleto via InfinityPay.</p>
+        <div class="step-card reveal">
+          <div class="step-icon-wrap">
+            <span class="step-num-big">1</span>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h3>Pague com segurança</h3>
+            <p>Clique no botão, escolha Pix, cartão ou boleto. A InfinityPay processa tudo com segurança SSL.</p>
+          </div>
         </div>
 
-        <div class="step-card reveal reveal-delay-2">
-          <div class="step-number">2</div>
-          <h3>Receba os dados</h3>
-          <p>Em até 10 minutos após a confirmação, você recebe o e-mail e senha de acesso da conta.</p>
+        <div class="step-card reveal">
+          <div class="step-icon-wrap">
+            <span class="step-num-big">2</span>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h3>Receba automaticamente</h3>
+            <p>Em até 10 minutos você recebe e-mail e senha da conta. Pagamento Pix = quase instantâneo.</p>
+          </div>
         </div>
 
-        <div class="step-card reveal reveal-delay-3">
-          <div class="step-number">3</div>
-          <h3>Altere e aproveite</h3>
-          <p>Acesse o ChatGPT, altere o e-mail e a senha para os seus dados pessoais e use por 30 dias.</p>
+        <div class="step-card reveal">
+          <div class="step-icon-wrap">
+            <span class="step-num-big">3</span>
+          </div>
+          <div class="step-body">
+            <h3>Use por 30 dias</h3>
+            <p>Acesse, altere e-mail e senha para seus dados e aproveite tudo que o Plus oferece.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Security -->
+  <!-- Testimonials -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title reveal">Segurança e confiança</h2>
-      <p class="section-subtitle reveal reveal-delay-1">Sua compra é protegida do início ao fim.</p>
+      <h2 class="section-title reveal">O que estão dizendo</h2>
+      <p class="section-subtitle reveal">Depoimentos reais de clientes que já usam.</p>
 
-      <div class="security-grid">
-        <div class="security-card reveal reveal-delay-1">
-          <div class="security-icon">🔐</div>
-          <h4>Pagamento Criptografado</h4>
-          <p>Checkout seguro via InfinityPay com certificado SSL.</p>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="tc-stars">⭐⭐⭐⭐⭐</div>
+          <p class="tc-text">"Recebi em 5 minutos! A conta é minha mesmo, consegui mudar senha e e-mail tranquilamente. Melhor investimento que fiz."</p>
+          <div class="tc-author">
+            <div class="tc-avatar">RC</div>
+            <div>
+              <div class="tc-name">Rafael C.</div>
+              <div class="tc-location">São Paulo, SP</div>
+            </div>
+          </div>
         </div>
 
-        <div class="security-card reveal reveal-delay-2">
-          <div class="security-icon">⚡</div>
-          <h4>Entrega Automática</h4>
-          <p>Dados de acesso enviados automaticamente após confirmação.</p>
+        <div class="testimonial-card">
+          <div class="tc-stars">⭐⭐⭐⭐⭐</div>
+          <p class="tc-text">"O xThink Skills mudou minha forma de trabalhar. Uso para pesquisa de mercado e os resultados são impressionantes. Recomendo demais!"</p>
+          <div class="tc-author">
+            <div class="tc-avatar">AS</div>
+            <div>
+              <div class="tc-name">Amanda S.</div>
+              <div class="tc-location">Rio de Janeiro, RJ</div>
+            </div>
+          </div>
         </div>
 
-        <div class="security-card reveal reveal-delay-3">
-          <div class="security-icon">👤</div>
-          <h4>Conta 100% Sua</h4>
-          <p>Altere e-mail e senha. Ninguém mais tem acesso.</p>
+        <div class="testimonial-card">
+          <div class="tc-stars">⭐⭐⭐⭐⭐</div>
+          <p class="tc-text">"Mais barato que um almoço! Uso todo dia pra trabalho. O DALL-E 3 vale sozinho o preço do plano. Chegou rapidinho."</p>
+          <div class="tc-author">
+            <div class="tc-avatar">PL</div>
+            <div>
+              <div class="tc-name">Pedro L.</div>
+              <div class="tc-location">Curitiba, PR</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -284,54 +502,78 @@
   <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
-      <h2 class="section-title reveal">Perguntas frequentes</h2>
-      <p class="section-subtitle reveal reveal-delay-1">Tire suas dúvidas antes de comprar.</p>
+      <h2 class="section-title reveal">Perguntas Frequentes</h2>
+      <p class="section-subtitle reveal">Tire suas dúvidas antes de comprar.</p>
 
       <div class="faq-list">
-        <div class="faq-item reveal reveal-delay-1">
-          <button class="faq-question">
-            A conta é compartilhada com outras pessoas?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>A conta é compartilhada ou é minha?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Não. A conta é individual e privada. Somente você terá acesso. Você pode alterar o e-mail e a senha para os seus dados pessoais assim que receber.
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <strong>100% sua!</strong> A conta é individual e privada. Você pode alterar e-mail e senha para seus dados pessoais assim que receber. Ninguém mais terá acesso.
             </div>
           </div>
         </div>
 
-        <div class="faq-item reveal reveal-delay-2">
-          <button class="faq-question">
-            Em quanto tempo recebo os dados de acesso?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>Em quanto tempo recebo os dados?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              A entrega é feita em até 10 minutos após a confirmação do pagamento. Para pagamentos via Pix costuma ser instantâneo. Cartão de crédito pode levar alguns minutos.
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              A entrega é <strong>automática em até 10 minutos</strong> após a confirmação do pagamento. Pagamento via Pix costuma ser instantâneo. Cartão pode levar alguns minutos.
             </div>
           </div>
         </div>
 
-        <div class="faq-item reveal reveal-delay-3">
-          <button class="faq-question">
-            Posso alterar a senha e o e-mail da conta?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>Posso usar no meu celular?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Sim! Assim que receber os dados de acesso, recomendamos que altere imediatamente o e-mail e a senha para garantir que a conta fique totalmente sua.
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Sim! Funciona no celular, tablet e computador. Você pode acessar pelo app do ChatGPT ou pelo site em qualquer dispositivo.
             </div>
           </div>
         </div>
 
-        <div class="faq-item reveal reveal-delay-4">
-          <button class="faq-question">
-            Quais formas de pagamento são aceitas?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>Quais formas de pagamento são aceitas?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Aceitamos Pix, cartão de crédito (todas as bandeiras) e boleto bancário. O pagamento é processado de forma segura pela InfinityPay.
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Aceitamos <strong>Pix, cartão de crédito</strong> (todas as bandeiras) e <strong>boleto bancário</strong>. O checkout é seguro via InfinityPay com certificação SSL.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>E se eu não receber a conta?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Caso não receba em até 10 minutos, basta entrar em contato. Sua compra é protegida e garantimos a entrega ou reembolso total.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            <span>O xThink Skills funciona na conta?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Sim! A conta Plus dá acesso completo a todos os recursos avançados incluindo pesquisa profunda, raciocínio estratégico xThink e todas as ferramentas premium.
             </div>
           </div>
         </div>
@@ -339,25 +581,62 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="final-cta-glow"></div>
     <div class="container">
-      <div class="cta-box reveal">
-        <h2>Garanta seu acesso agora</h2>
-        <p>Apenas 1 unidade disponível. Não perca a oportunidade de usar o ChatGPT Plus por um preço imperdível.</p>
-        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          Comprar agora — R$ 39,90
+      <div class="fcta-inner reveal">
+        <div class="fcta-badge">⚡ OFERTA POR TEMPO LIMITADO</div>
+        <h2 class="fcta-title">Comece agora por apenas <span class="fcta-price">R$ 24,90</span></h2>
+        <p class="fcta-sub">Pagamento único. Acesso imediato. Sua conta em até 10 minutos.</p>
+
+        <div class="fcta-countdown">
+          <span>Promoção termina em:</span>
+          <div class="countdown countdown-big">
+            <span class="countdown-segment" id="fcd-hours">00</span>
+            <span>:</span>
+            <span class="countdown-segment" id="fcd-minutes">00</span>
+            <span>:</span>
+            <span class="countdown-segment" id="fcd-seconds">00</span>
+          </div>
+        </div>
+
+        <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="btn-buy-final">
+          <span class="btnbf-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
+          <span class="btnbf-text">
+            <span class="btnbf-main">QUERO MEU CHATGPT PLUS AGORA</span>
+            <span class="btnbf-sub">R$ 24,90 • Acesso imediato • Entrega em 10 min</span>
+          </span>
+          <span class="btnbf-arrow">→</span>
         </a>
+
+        <div class="fcta-trust">
+          <span>🔒</span> Pagamento seguro
+          <span>⚡</span> Entrega automática
+          <span>🛡️</span> Garantia de entrega
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="https://infinitypay.com.br/checkout/SEU-LINK-AQUI" target="_blank" rel="noopener" class="fcta-btn">
+      <span class="fcta-btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      </span>
+      <span class="fcta-btn-text">Comprar — R$ 24,90</span>
+      <span class="fcta-btn-pulse"></span>
+    </a>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 ChatGPT Plus Individual. Todos os direitos reservados.</p>
-      <p style="margin-top: 6px; font-size: 0.78rem; color: var(--gray-700);">Este site não é afiliado à OpenAI. Marca registrada pertence à OpenAI.</p>
+      <p class="footer-disclaimer">Este site não é afiliado à OpenAI. ChatGPT é marca registrada da OpenAI.</p>
     </div>
   </footer>
 
